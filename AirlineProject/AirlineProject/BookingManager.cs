@@ -13,20 +13,20 @@ namespace AirlineProject
         private int numBookings;
         private Booking[] bookingList;
 
-        public BookingManager(int seed, int maxBooking)
+        public BookingManager(int bookSeed, int maxBooking)
         {
-            currentBookingId = seed;
+            currentBookingId = bookSeed;
             this.maxBooking = maxBooking;
             numBookings = 0;
             bookingList = new Booking[maxBooking];
         }
         
-        public bool addBooking(Customer customer, Flight flight)
+        public bool addBooking(Customer cust, Flight flt)
         {
             if (numBookings >= maxBooking) return false;
             DateTime today = DateTime.Today;
             string date = today.ToString("yyyy/MM/dd");
-            bookingList[numBookings] = new Booking(currentBookingId, date, flight, customer);
+            bookingList[numBookings] = new Booking(currentBookingId, date, flt, cust);
             numBookings++;
             currentBookingId++;
             return true;

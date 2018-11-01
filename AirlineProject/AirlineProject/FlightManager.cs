@@ -14,15 +14,15 @@ namespace AirlineProject
 
         public FlightManager(int maxFlt)
         {
-            this.maxFlights = maxFlt;
+            maxFlights = maxFlt;
             numFlights = 0;
             listFlights = new Flight[maxFlights];
         }
 
-        public bool addFlight(int flightNo, string origin, string destination, int maxSeats)
+        public bool addFlight(int flNo, string origin, string dest, int maxSeats)
         {
             if (numFlights >= maxFlights) return false;
-            listFlights[numFlights] = new Flight(flightNo, origin, destination, maxSeats);
+            listFlights[numFlights] = new Flight(flNo, origin, dest, maxSeats);
             numFlights++;
             return true;
         }

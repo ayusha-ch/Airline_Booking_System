@@ -21,20 +21,20 @@ namespace AirlineProject
             listCustomer = new Customer[maxCustomers];
         }
 
-        public bool addCustomer(string fName, string lName, string phone)
+        public bool addCustomer(string cfName, string lName, string phone)
         {
             if (numCustomers >= maxCustomers) return false;
-            listCustomer[numCustomers] = new Customer(currentCustNo, fName, lName, phone);
+            listCustomer[numCustomers] = new Customer(currentCustNo, cfName, lName, phone);
             numCustomers++;
             currentCustNo++;
             return true;
         }
 
-        private int findCustomer(int custId)
+        private int findCustomer(int cId)
         {
             for (int i = 0; i < numCustomers; i++)
             {
-                if (listCustomer[i].getCustomerId() == custId)
+                if (listCustomer[i].getCustomerId() == cId)
                     return i;
             }
             return -1;
@@ -52,10 +52,10 @@ namespace AirlineProject
             return listCustomer[loc];
         }
 
-        public bool deleteCustomer(int custId)
+        public bool deleteCustomer(int cId)
         {
-            if (!customerExist(custId)) return false;
-            int loc = findCustomer(custId);
+            if (!customerExist(cId)) return false;
+            int loc = findCustomer(cId);
             listCustomer[loc] = listCustomer[numCustomers-1];
             numCustomers--;
             return true;

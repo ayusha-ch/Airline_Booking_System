@@ -13,12 +13,12 @@ namespace AirlineProject
         private Flight flight;
         private Customer customer;
 
-        public Booking(int bookingId, string bookingDate, Flight flight, Customer customer)
+        public Booking(int bookId, string bookDate, Flight flt, Customer cust)
         {
-            this.bookingId = bookingId;
-            this.bookingDate = bookingDate;
-            this.flight = flight;
-            this.customer = customer;
+            bookingId = bookId;
+            bookingDate = bookDate;
+            flight = flt;
+            customer = cust;
         }
 
         public int getBookingId() { return bookingId; }

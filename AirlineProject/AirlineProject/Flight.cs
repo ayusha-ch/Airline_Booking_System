@@ -15,12 +15,12 @@ namespace AirlineProject
         private int numPassengers;
         private Customer[] listPassenger;
 
-        public Flight(int flightNumber,string origin,string destination,int maxSeats)
+        public Flight(int flightNo,string orig,string dest,int mSeats)
         {
-            this.flightNumber = flightNumber;
-            this.origin = origin;
-            this.destination = destination;
-            this.maxSeats = maxSeats;
+            flightNumber = flightNo;
+            origin = orig;
+            destination = dest;
+            maxSeats = mSeats;
             numPassengers = 0;
             listPassenger = new Customer[maxSeats];
         }

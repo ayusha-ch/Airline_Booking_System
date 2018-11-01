@@ -13,12 +13,12 @@ namespace AirlineProject
         private string lastName;
         private string phone;
 
-        public Customer(int customerId, string firstName, string lastName, string phone)
+        public Customer(int id, string fName, string lName, string ph)
         {
-            this.customerId = customerId;
-            this.firstName = firstName;
-            this.lastName = lastName;
-            this.phone = phone;
+            id = customerId;
+            firstName = fName;
+            lastName = lName;
+            phone = ph;
         }
 
         public int getCustomerId() { return customerId; }

@@ -12,21 +12,21 @@ namespace AirlineProject
         private CustomerManager customMan;
         private BookingManager bookingMan;
 
-        public AirlineCoordinator(int custIdSeed, int maxCustomers, int maxFlights, int bookingSeed, int maxBooking)
+        public AirlineCoordinator(int custIdSeed, int maxCustomers, int maxFlights, int bookSeed, int maxBook)
         {
             flightMan = new FlightManager(maxFlights);
             customMan = new CustomerManager(custIdSeed, maxCustomers);
-            bookingMan = new BookingManager(bookingSeed, maxBooking);
+            bookingMan = new BookingManager(bookSeed, maxBook);
         }
 
-        public bool addFlight(int flNo, string orig, string dest, int maxSeats)
+        public bool addFlight(int flNo, string origin, string dest, int maxSeats)
         {
-            return flightMan.addFlight(flNo, orig, dest, maxSeats) ;
+            return flightMan.addFlight(flNo, origin, dest, maxSeats) ;
         }
 
-        public bool addCustomer(string fName, string lName, string phone)
+        public bool addCustomer(string cfName, string lName, string phone)
         {
-            return customMan.addCustomer(fName, lName, phone);
+            return customMan.addCustomer(cfName, lName, phone);
         }
 
         public string flightList()
@@ -44,9 +44,9 @@ namespace AirlineProject
             return customMan.deleteCustomer(cId);
         }
 
-        public bool deleteFlight(int cId)
+        public bool deleteFlight(int flightNo)
         {
-            return flightMan.deleteFlight(cId);
+            return flightMan.deleteFlight(flightNo);
         }
 
         public bool addBooking(int custId, int flightNum)
